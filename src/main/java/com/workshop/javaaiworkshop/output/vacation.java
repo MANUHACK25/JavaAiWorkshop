@@ -28,6 +28,9 @@ public class vacation {
      * la idea ahora es que no vamos a retornar una repuesta normal asi como quieiseramos sino es que
      * ahora vamos a devolver un tipo especifico de respuestra basado a una entidad que tengamos
      * puede ser un record, o un json un ejemplo en si que haya
+     *
+     *
+     * NICE FEATURE FROM SPRING AI
      * */
     @GetMapping("/vacation/structured")
     public Itinerary structured(){
@@ -51,8 +54,13 @@ public class vacation {
      * this method tries to improve structured Method (/vacation/structured)
      * instead of doing just a raw calling could call a Flux<Object>
      *     still at testing though
+     *
+     *
+     *     For the moment this method is Deprecated until to find a solution for
+     *     the Flux of Jsons
      * */
-    @GetMapping("/vacation/structuredMono")
+    @Deprecated
+    //@GetMapping("/vacation/structuredMono")
     public Mono<Itinerary> monoStructured(){
         // Se define el conversor, igual que en tu código original.
         BeanOutputConverter<Itinerary> outputConverter = new BeanOutputConverter<>(Itinerary.class);

@@ -23,7 +23,6 @@ public class BankController {
      *
      * a parte de eso retornoa un Flux<String>
      * */
-
     @GetMapping("/bankChat")
     public Flux<String> chat(@RequestParam String message){
         var systemInstructions = """

@@ -15,6 +15,11 @@ public class ArticleController {
         this.chatClient = builder.build();
     }
 
+    /**
+     * Este metodo nos permite hace un controller el cual nosotros le damos
+     * un tema para que haga un articulo y este lo hara en base al SystemPrompt que tiene
+     * */
+
     @GetMapping(path = "/posts/new", produces = "text/plain; charset=UTF-8")
     public Flux<String> newPost(@RequestParam(value = "topic", defaultValue = "Fubtol Peruano") String topic){
         var systemPrompt = """           
