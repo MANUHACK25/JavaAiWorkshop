@@ -34,7 +34,8 @@ public class vacation {
      * */
     @GetMapping("/vacation/structured")
     public Itinerary structured(){
-        return (Itinerary) chatClient.prompt()
+        return (Itinerary) chatClient
+                .prompt()
                 .user("quiero hacer un viaje a cusco por 4 dias, dame una lista de cosas que hacer")
                 .call()
                 .entity(new BeanOutputConverter(Itinerary.class){
